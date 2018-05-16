@@ -1,0 +1,138 @@
+/*
+Design by Free CSS Templates
+*/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #FFFFFF url(images/img01.gif) repeat-x;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	color: #6E6E6E;
+}
+
+img {
+        display:block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+label {
+font-weight: bold;
+display: block;
+width: 160px;
+float: left;
+}
+label:after { content: ": " }
+
+
+input, select {
+    width: 30%;
+    padding: 8px 12px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+   background-color: #4682B4;
+    border: none;
+    color: white;
+    padding: 8px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+h1, h2, h3 {
+	margin-bottom: 1.5em;
+	letter-spacing: -0.05em;
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+
+h1 a:hover, h2 a:hover {
+	text-decoration: underline;
+}
+
+h1 {
+	font-size: 38px;
+}
+
+h2 {
+	font-size: 28px;
+}
+
+h3 {
+	font-size: 17px;
+	font-weight: normal;
+	color: #4682B4;
+}
+
+p, ul, ol {
+	margin-top: 1.5em;
+	line-height: 190%;
+}
+
+ul, ol {
+	margin-left: 3em;
+}
+
+blockquote {
+	margin-left: 3em;
+	margin-right: 3em;
+}
+
+hr {
+    height: 12px;
+    border: 0;
+    box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* Logo */
+
+#logo {
+	width: 870px;
+	height: 135px;
+	margin: 0 auto;
+}
+
+#logo h1 {
+	margin: 0;
+	float: left;
+	padding-top: 75px;
+}
+
+
+/* Page */
+
+#page {
+	width: 900px;
+	margin: 0 auto;
+	padding: 45px 35px 45px 25px;
+	background: url(images/img05.gif) no-repeat;
+}
+
+
+
+#date3, #my_prediction, #others_prediction, #all_dates {
+	color: #4682B4;
+	font-weight: bold;
+}
+
+
+/*#historical_result > li {
+    display: inline-block;
+}*/
+
+#historical_result {
+    column-count: 6;
+}
