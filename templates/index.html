@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Weather Station</title>
+    <!-- <script type="text/javascript" src="jquery-3.3.1.min.js"></script> -->
+    <!-- <script type="text/javascript" src="jquery.flot.js"></script> -->
+    <!-- <script type="text/javascript" src="jquery.flot.axislabels.js"></script> -->
+    <!-- <link rel=stylesheet type=text/css href="style.css"> -->
+    <!-- <script type="text/javascript" src="main.js"></script> -->
+
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+    <script type=text/javascript src="{{url_for('static', filename='jquery-3.3.1.min.js') }}"></script>
+    <script type=text/javascript src="{{url_for('static', filename='jquery.flot.js') }}"></script>
+    <script type=text/javascript src="{{url_for('static', filename='jquery.flot.axislabels.js') }}"></script>
+    <!-- <script type=text/javascript src="{{url_for('static', filename='jquery.ajax-cross-origin.min.js') }}"></script>
+ -->
+    <script type=text/javascript src="{{url_for('static', filename='main.js') }}"></script>
+</head>
+
+
+<body>
+    <div id="logo">
+        <h1>Siqi's Weather Station @ Cincinnati, OH</h1>
+    </div>
+    <br>
+    <div d="banner">
+        <img src="{{url_for('static', filename='images/img04.jpg')}}">
+    </div>
+
+    <!-- start page -->
+    <br><br><hr>
+    <div id="page"><!-- start content -->
+
+    <div class="introduction">
+        <h2 class="title">Welcome to Weather Station</h2>
+        <div class="entry">
+        <h3>This is a weather forecast application. It provides 5-day weather forecast for Cincinnati. You can also retreive historical weather data in Cincinnati since 2013-01-01, and upload new weather data to our database.</h3>
+        </div>
+        <br><br><hr/><br>
+    </div>
+
+    <!-- <div class="search"> -->
+        <h2 class="title">Historical Weather</h2>
+        <h3>Find historical weather in Cincinnati by searching for a date. The earliest date is 2013-01-01.</h3>
+        <br>
+
+        <form id='form_search'>
+            <label>Date</label><br>
+            <!-- <input type='date' id='date1' name='date1' align="right"><br> -->
+            <input type='date' id='date1' name='date1' min="2013-01-01" max="2018-02-15"><br>
+
+            <br><br>
+            <button type="button" id="search_button">Search!</button>
+        </form>
+
+            <!-- <h3>Record:</h3> -->
+            <ul id='search_result'></ul>
+        <br><hr/><br>
+    <!-- </div> -->
+
+    <!-- <div class="post"> -->
+        <h2 class="title">Upload New Weather Data</h2>
+        <h3>Upload new weather data here by providing the date, minimum temperature and maximum temperature.</h3>
+        <br>
+
+        <form id='form_post'>
+            <label>Date</label><br>
+            <input type='date' id='date2' name='date2' align="right"><br>
+
+            <label>Min Temperature</label><br>
+            <input type="number" id="tmin2" name="tmin2" align="right"><br>
+
+            <label>Max Temperature</label><br>
+            <input type="number" id="tmax2" name="tmax2" align="middle"><br>
+
+            <br><br>
+            <button type="button" id="add_button">Add!</button>
+        </form>
+
+            <!-- <h3>Record:</h3> -->
+            <ul id='post_result'></ul>
+        <br><hr/><br>
+    <!-- </div> -->
+
+
+   <!--  <div class="post"> -->
+        <h2 class="title">Five Day Weather Forecast</h2>
+        <h3>Predict five day forecast in Cincinnati. Plot the weather forecast and compare the result with OpenWeatherMap.org.</h3>
+
+        <p><b>Today's Date: </b><span id="date3"></span></p>
+
+            <script>
+                var today = new Date();
+                var dd = today.getDate();
+                var mm = today.getMonth()+1;
+                var yyyy = today.getFullYear();
+                if(dd<10)
+                {
+                    dd='0'+dd;
+                }
+                if(mm<10)
+                {
+                    mm='0'+mm;
+                }
+                today = yyyy + '-' + mm + '-' + dd;
+                document.getElementById("date3").innerHTML = today;
+            </script>
+
+            <br><br>
+            <button type="button" id="predict_button">Predict!</button><br><br>
+            <button type="button" id="get_weather_button">Compare result with OpenWeatherMap.org!</button><br><br>
+
+            <div id='my_prediction' color='red'></div>
+            <ul id='my_predict_result'></ul><br>
+
+            <div align="center" id="plotarea1"></div><br>
+
+            <div id='others_prediction'></div>
+            <ul id='others_predict_result'></ul><br>
+
+            <div align="center" id="plotarea2"></div><br>
+
+            <hr/>
+
+
+
+   <!--  </div> -->
+        <br>
+        <h2 class="title">Display All Historical Data</h2>
+        <h3>Show all available dates in our database.</h3>
+        <button type="button" id="search_all_button">Show All!</button><br><br>
+        <div id='all_dates'></div>
+
+            <!-- <h3>Record:</h3> -->
+            <ul id='historical_result'></ul>
+        <br><hr/><br>
+
+    </div>
+
+
+
+
+</body>
+</html>
